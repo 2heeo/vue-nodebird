@@ -4,4 +4,14 @@ module.exports = {
       title: 'NodeBird'
     }
   },
+  modules: [
+    '@nuxtjs/vuetify',
+    '@nuxtjs/axios'
+  ],
+  plugins: [
+
+  ],
+  vuetify: {
+
+  }
 };
