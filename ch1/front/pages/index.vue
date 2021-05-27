@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hello {{name}}
+    Main page
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    signup page
+    signUp page
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
       name: 'Nuxt.js',
     }
   },
+  head() {
+    return {
+      title: '회원가입'
+    }
+  }
 }
 </script>
 
