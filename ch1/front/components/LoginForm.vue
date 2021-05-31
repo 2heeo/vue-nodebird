@@ -1,5 +1,5 @@
 <template>
-  <v-container v-if="!me">
+  <v-container>
     <v-card>
       <v-form ref="form" v-model="valid" @submit.prevent="onSubmitForm">
         <v-container>
@@ -23,14 +23,6 @@
       </v-form>
     </v-card>
   </v-container>
-  <v-container v-else>
-    <v-card>
-      <v-container>
-        {{me.nickname}}님 로그인되었습니다.
-        <v-btn @click="onLogOut">로그아웃</v-btn>
-      </v-container>
-    </v-card>
-  </v-container>
 </template>
 
 <script>
@@ -49,27 +41,12 @@
         ],
       };
     },
-    computed: {
-      me() {
-        return this.$store.state.users.me;
-      },
-    },
     methods: {
       onSubmitForm() {
-        if (this.$refs.form.validate()) {
-          // dispatch는 자체적으로 promise임 (그래서 then을 사용하여 순서를 보장 할 수 있다.)
-          // promise는 async와 await으로도 쓸 수 있다.
-          this.$store.dispatch('users/logIn', {
-            email: this.email,
-            nickname: '이히오',
-          });
-        }
-      },
-      onLogOut() {
-        this.$store.dispatch('users/logOut');
-      },
-    },
-  };
+        this.$refs.form.validate();
+      }
+    }
+  }
 </script>
 
 <style>
