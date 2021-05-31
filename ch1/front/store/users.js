@@ -25,9 +25,9 @@ export const mutations = {
   * dispatch : actions를 실행
   * actions안에서 mutations를 실행 할 수도 있고, 또 다른 actions를 실행 할 수도 있고, state를 바꾸거나, getters를 사용하는 것 등이 가능하다.
   */
-export const actions = {
-  signUp(context, payload){
-    // 서버에 회원 가입 요청을 보내는 부분
+ export const actions = {
+  signUp({ commit, state }, payload) {
+    // 서버에 회원가입 요청을 보내는 부분
     // 요청에 대한 응답이 오면 me의 상태(state)를 변경
     commit('setMe', payload);
   },
@@ -37,4 +37,4 @@ export const actions = {
   logOut({ commit }, payload) {
     commit('setMe', null);
   },
-}
+};
